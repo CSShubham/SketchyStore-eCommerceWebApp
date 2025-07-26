@@ -6,9 +6,11 @@ import Account from "./pages/Account";
 import Cart from "./pages/Cart";
 import ProductPage from "./pages/ProductPage";
 import Front from "./pages/Front";
-
+import { ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 function App() {
   return (
+    <>
     <Routes>
       <Route path="/" element={<MainLayout />}>
       <Route path="/" element={<Front/>}/>
@@ -20,6 +22,15 @@ function App() {
       </Route>
       <Route path="/home/account" element={<Account />} />
     </Routes>
+    <ToastContainer
+    position="top-center"
+    autoClose={2000}
+    hideProgressBar={false}
+    closeOnClick
+    pauseOnHover
+    draggable
+    />
+</>
   );
 }
 

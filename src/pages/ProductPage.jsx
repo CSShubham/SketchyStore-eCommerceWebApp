@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import ImageCarousel from "../components/ImageCarousel";
 import Loading from "../components/Loading";
+import { toast } from "react-toastify";
 import { addToCart } from "../slice/CartSlice";
 import { useNavigate } from "react-router-dom";
 function ProductPage() {
@@ -68,6 +69,9 @@ function ProductPage() {
               onClick={(e) => {
                 e.stopPropagation();
                 dispatch(addToCart(product));
+                toast.success(`${product.title} added to cart!`,{
+                 theme:"colored"
+                });
               }}
             >
               Add To Cart

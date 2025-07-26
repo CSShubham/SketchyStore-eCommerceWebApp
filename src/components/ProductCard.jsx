@@ -2,6 +2,7 @@ import React from "react";
 import { addToCart } from "../slice/CartSlice";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
+import { toast } from "react-toastify";
 
 function ProductCard({ product }) {
   const navigate = useNavigate();
@@ -48,6 +49,7 @@ function ProductCard({ product }) {
           onClick={(e) => {
             e.stopPropagation();
             dispatch(addToCart(product));
+            toast.success(`${product.title} added to cart!`);
           }}
         >
           Add To Cart

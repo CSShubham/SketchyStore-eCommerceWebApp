@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { removeFromCart } from "../slice/CartSlice";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 function Cart() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -42,7 +43,10 @@ function Cart() {
           <div className="container mx-auto p-4 px-10">
             <ul className="flex gap-5 flex-wrap">
               {cartItems.map((item) => (
-                <li key={item.id} className="border p-2 px-3 rounded-xl shadow mb-4">
+                <li
+                  key={item.id}
+                  className="border p-2 px-3 rounded-xl shadow mb-4"
+                >
                   <div className="flex justify-between">
                     <p className="text-sm text-gray-500 capitalize">
                       {item.category}
@@ -59,15 +63,18 @@ function Cart() {
                   <p>Quantity: {item.quantity}</p>
                   <p>Total: ${item.totalPrice.toFixed(2)}</p>
                   <div className="flex gap-3 items-center mt-2 mb-2 mx-1">
-                  <button
-                    className="border-1 rounded-lg text-sm px-2 py-2.5 bg-red-500 text-white active:bg-white active:text-red-500 cursor-pointer"
-                    onClick={() => dispatch(removeFromCart(item.id))}
-                  >
-                    Remove
-                  </button>
-                  <button className="border-1 rounded-lg text-sm px-2 py-2.5 cursor-pointer">
-                    Place order <span className="text-xs">&#9889;</span>
-                  </button>
+                    <button
+                      className="border-1 rounded-lg text-sm px-2 py-2.5 bg-red-500 text-white active:bg-white active:text-red-500 cursor-pointer"
+                      onClick={() => {
+                        dispatch(removeFromCart(item.id));
+                        toast.warn(`${item.title} removed from cart!!`);
+                      }}
+                    >
+                      Remove
+                    </button>
+                    <button className="border-1 rounded-lg text-sm px-2 py-2.5 cursor-pointer">
+                      Place order <span className="text-xs">&#9889;</span>
+                    </button>
                   </div>
                 </li>
               ))}
