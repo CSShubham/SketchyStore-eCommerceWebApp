@@ -42,21 +42,20 @@ function ProductPage() {
 
   return (
     <div className="h-full w-full py-1 px-10">
-     
       <div className="flex gap-4">
         {" "}
         {/* both horizontal div container image and the details*/}
-         <div className=" w-20">
-        <button
-          className="px-3 py-2 border-1 rounded-xl flex items-center text-white bg-[#FF735C] active:text-[#FF735C] active:bg-white"
-          onClick={() => {
-            navigate(-1);
-          }}
-        >
-          {" "}
-          &larr; Back{" "}
-        </button>
-      </div>
+        <div className=" w-20">
+          <button
+            className="px-3 py-2 border-1 rounded-xl flex items-center text-white bg-[#FF735C] active:text-[#FF735C] active:bg-white"
+            onClick={() => {
+              navigate(-1);
+            }}
+          >
+            {" "}
+            &larr; Back{" "}
+          </button>
+        </div>
         <div className=" border-0 ">
           {" "}
           {/*div container image and buttons*/}
@@ -128,23 +127,22 @@ function ProductPage() {
             Reviews
           </h1>
           <div className="flex px-5 mt-5 gap-5 justify-center items-center">
-            {product.reviews.map((review) => {
-              return (
-                <>
-                  <div className=" border-2 rounded-xl h-50 flex flex-col justify-center items-center py-5 px-1 w-full">
-                    <div className="border-0 flex justify-center items-center rounded-[50%] mb-1 font-bold bg-zinc-400 h-10 w-10">
-                      {review.reviewerName.charAt(0)}
-                    </div>
-                    <span>{review.reviewerName}</span>
-                    <p className="text-xs">{review.reviewerEmail}</p>
-                    <span className=" text-center w-10 text-white font-semibold rounded-2xl py-0.3 border-2  bg-green-600">
-                      {review.rating}&#9734;
-                    </span>
-                    <p>{review.comment}</p>
-                  </div>
-                </>
-              );
-            })}
+            {(product.reviews || []).map((review, idx) => (
+              <div
+                key={`${review.reviewerEmail || review.reviewerName}-${idx}`}
+                className="border-2 rounded-xl h-50 flex flex-col justify-center items-center py-5 px-1 w-full"
+              >
+                <div className="border-0 flex justify-center items-center rounded-[50%] mb-1 font-bold bg-zinc-400 h-10 w-10">
+                  {review.reviewerName?.charAt(0)}
+                </div>
+                <span>{review.reviewerName}</span>
+                <p className="text-xs">{review.reviewerEmail}</p>
+                <span className="text-center w-10 text-white font-semibold rounded-2xl py-0.3 border-2 bg-green-600">
+                  {review.rating}&#9734;
+                </span>
+                <p>{review.comment}</p>
+              </div>
+            ))}
           </div>
         </div>
         <div className="flex items-center ">

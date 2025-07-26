@@ -20,7 +20,7 @@ function Sidebar() {
       <div className="h-screen w-80 border-r-3 border-[#FF735C] pt-1 px-3 flex flex-col ">
         <button
           onClick={() => navigate("/home")}
-          className="bg-zinc-500 h-15 rounded-lg mb-2 text-white"
+          className="bg-zinc-500 h-15 rounded-lg mb-2 text-white hover:bg-zinc-600"
         >
           All Products
         </button>
