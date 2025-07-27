@@ -24,28 +24,28 @@ function ProductCard({ product }) {
     <div
       //   key={product.id}
       onClick={() => navigate(`/home/${product.id}`)}
-      className="border-0 p-2 rounded shadow"
+      className="border-1 p-2 sm:p-4  rounded-lg shadow cursor-pointer "
     >
-      <div className="flex justify-between">
-      <p className="text-sm text-gray-500 capitalize">{product.category}</p>
-      <span className="pr-5 text-xl">&#9825;</span>
+      <div className="flex justify-between items-center">
+      <p className="text-xs sm:text-sm text-gray-500 capitalize">{product.category}</p>
+      <span className="pr-2 sm:pr-5 text-lg lg:text-xl">&#9825;</span>
       </div>
       <img
         src={product.thumbnail}
         alt={product.title}
-        className="w-full h-40 object-contain"
+        className="w-full h-15 sm:h-30 md:h-35 object-contain"
       />
 
-      <h3 className="text-lg font-semibold mt-2">{product.title}</h3>
+      <h3 className="text-xs sm:text-sm md:text-base font-semibold mt-2">{product.title}</h3>
 
-      <span className="flex gap-2 items-center">
-      <p className="text-green-600 font-semibold text-md">&darr;{product.discountPercentage}%</p>
-      <p className="line-through">${original.toFixed(0)}</p>
-      <p className="text-black font-bold">${product.price}</p>
+      <span className="flex gap-2 items-center flex-wrap">
+      <p className="text-green-600 font-semibold text-xs sm:text-md">&darr;{product.discountPercentage}%</p>
+      <p className="line-through text-xs sm:text-base">${original.toFixed(0)}</p>
+      <p className="text-black font-bold text-xs sm:text-sm md:text-lg">${product.price}</p>
       </span>
-      <div className="flex justify-between items-center mt-2 mx-1">
+      <div className="flex flex-col sm:flex-row justify-between items-center mt-2 mx-1 gap-2">
         <button
-          className="border-1 bg-[#FF735C] text-white text-sm active:bg-white active:text-[#FF735C] active:scale-95 transition rounded-lg px-2 py-2.5 cursor-pointer"
+          className="border-1 bg-[#FF735C] text-white text-xs lg:text-sm active:bg-white active:text-[#FF735C] active:scale-95 transition rounded-lg px-1 py-2 sm:px-2 sm:py-2.5 cursor-pointer w-full lg:w-auto"
           onClick={(e) => {
             e.stopPropagation();
             dispatch(addToCart(product));
@@ -54,7 +54,7 @@ function ProductCard({ product }) {
         >
           Add To Cart
         </button >
-        <button className="border-1 rounded-lg text-sm px-2 py-2.5 cursor-pointer">
+        <button className="border-1 rounded-lg text-xs lg:text-sm px-1 py-2 sm:px-2 sm:py-2.5 cursor-pointer w-full lg:w-auto">
           Buy Now <span className="text-xs">&#9889;</span>
         </button>
       </div>

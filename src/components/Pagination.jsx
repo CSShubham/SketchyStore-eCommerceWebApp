@@ -9,10 +9,10 @@ const Pagination = ({ page, setPage }) => {
     }
   };
   return (
-    <div className="border-0 p-4">
-      <div className="pagination-controls flex  justify-between  border-0 mr-15 ml-15">
+    <div className="border-0 p-2 sm:p-4 w-full">
+      <div className="pagination-controls flex  sm:justify-between sm:gap-4 gap-5  items-center border-0 mr-15 ml-15">
         <button
-          className="px-3 py-2 border-1 rounded-xl flex items-center text-white bg-[#0e0b0b] active:text-[#FF735C] active:bg-white"
+          className="px-2 py-1 sm:px-3 sm:py-2 border-1 text-sm sm:text-base rounded-xl flex items-center text-white bg-[#0e0b0b] active:text-[#FF735C] active:bg-white"
           onClick={handleBack}
           disabled={page === 1}
         >
@@ -21,7 +21,7 @@ const Pagination = ({ page, setPage }) => {
         </button>
 
         <button
-          className="px-3 py-2 border-1 rounded-xl flex items-center text-white bg-[#111110] active:text-[#FF735C] active:bg-white"
+          className="px-2 py-1 sm:px-3 sm:py-2 border-1  text-sm sm:text-base rounded-xl flex items-center text-white bg-[#111110] active:text-[#FF735C] active:bg-white"
           onClick={handleNext}
         >
           {" "}

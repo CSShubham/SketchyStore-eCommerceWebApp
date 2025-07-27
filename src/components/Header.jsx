@@ -20,9 +20,9 @@ function Header() {
   };
 
   return (
-    <header className="bg-white flex  justify-between items-center px-10 text-black py-6">
-      <div className="text-2xl font-semibold tracking-wider text-[#ff735c]">SketchyStore</div>
-      <nav className="flex gap-10">
+    <header className="bg-white flex  justify-between items-center px-4 lg:px-10 text-black py-4 sm:py-6">
+      <div className="text-xl lg:text-2xl font-semibold tracking-wider text-[#ff735c]">SketchyStore</div>
+      <nav className="hidden md:flex md:flex-row gap-4 lg:gap-10 md:w-auto items-center">
         <NavLink
           to="/"
           className={({ isActive }) =>
