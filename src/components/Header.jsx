@@ -20,8 +20,8 @@ function Header() {
   };
 
   return (
-    <header className="bg-white flex  justify-between items-center px-4 lg:px-10 text-black py-4 sm:py-6">
-      <div className="text-xl lg:text-2xl font-semibold tracking-wider text-[#ff735c]">SketchyStore</div>
+    <header className=" flex  justify-between bg-[#ff735c] md:bg-white items-center px-4 lg:px-10 text-black py-4 sm:py-6">
+      <NavLink to='/' className="text-xl lg:text-2xl font-semibold  tracking-wider text-white md:text-[#ff735c]">SketchyStore</NavLink>
       <nav className="hidden md:flex md:flex-row gap-4 lg:gap-10 md:w-auto items-center">
         <NavLink
           to="/"
