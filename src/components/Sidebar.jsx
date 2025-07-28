@@ -17,15 +17,15 @@ function Sidebar() {
   };
   return (
     <>
-      <div className="h-screen w-28 sm:w-35 md:w-55 lg:w-60 border-r-2 border-[#FF735C] pt-1 px-0.5 sm:px-3 flex flex-col ">
+      <div className="h-screen w-22 sm:w-35 md:w-55 lg:w-60 border-r-2 border-[#FF735C] pt-1 px-0.5 sm:px-3 flex flex-col ">
         <button
           onClick={() => navigate("/home")}
-          className="bg-zinc-500 w-25 sm:w-30 md:w-full h-10 sm:h-15 rounded-lg mb-1  text-xs sm:text-sm text-white hover:bg-zinc-600"
+          className="bg-zinc-500 w-20 sm:w-30 md:w-full h-8 sm:h-15 rounded-lg mb-1  text-[10px] sm:text-sm text-white hover:bg-zinc-600"
         >
           All Products
         </button>
 
-        <h1 className=" sm:text-xl md:text-2xl lg:text-3xl md:px-4 font-bold text-base text-zinc-600 mb-0.5 mt-0.5">
+        <h1 className=" sm:text-xl md:text-2xl lg:text-3xl md:px-4 font-bold text-[12px] text-zinc-600 mt-1">
           All Categories
         </h1>
 
@@ -33,7 +33,7 @@ function Sidebar() {
           {categories.map((cat) => (
             <li
               key={cat}
-              className="px-0.5 py-2 sm:px-2 text-xs md:text-lg hover:bg-gray-200 cursor-pointer"
+              className="px-0.5 py-2 sm:px-2 text-[9px] md:text-lg hover:bg-gray-200 cursor-pointer"
               onClick={() => handleCategoryClick(cat)}
             >
               {cat}

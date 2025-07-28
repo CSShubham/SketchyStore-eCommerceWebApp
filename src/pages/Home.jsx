@@ -27,7 +27,7 @@ export default function Home() {
     <div className="flex min-h-screen w-full px-0 ">
     <Sidebar/>
     <div className="h-screen flex-1 overflow-y-auto px-2 py-4 sm:px-4 md:px-10">
-      <h1 className="text-xl sm:text-2xl md:text-3xl font-bold mb-4 border-b-1 pb-3">All Products</h1>
+      <h1 className="text-lg sm:text-2xl md:text-3xl font-bold mb-4 border-b-1 pb-3">All Products</h1>
       <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 overflow-auto border-b-1 pb-5 gap-4">
         {items.map((product) => (
           // <div key={product.id} onClick={() => navigate(`/${product.id}`)} className="border-0 p-2 rounded shadow">

@@ -27,8 +27,8 @@ function ProductCard({ product }) {
       className="border-1 p-2 sm:p-4  rounded-lg shadow cursor-pointer "
     >
       <div className="flex justify-between items-center">
-      <p className="text-xs sm:text-sm text-gray-500 capitalize">{product.category}</p>
-      <span className="pr-2 sm:pr-5 text-lg lg:text-xl">&#9825;</span>
+      <p className="text-[10px] sm:text-sm text-gray-500 capitalize">{product.category}</p>
+      <span className="pr-2 sm:pr-5 text-[10px] lg:text-xl">&#9825;</span>
       </div>
       <img
         src={product.thumbnail}
@@ -36,16 +36,16 @@ function ProductCard({ product }) {
         className="w-full h-15 sm:h-30 md:h-35 object-contain"
       />
 
-      <h3 className="text-xs sm:text-sm md:text-base font-semibold mt-2">{product.title}</h3>
+      <h3 className="text-[12px] sm:text-sm md:text-base font-semibold mt-2">{product.title}</h3>
 
       <span className="flex gap-2 items-center flex-wrap">
       <p className="text-green-600 font-semibold text-xs sm:text-md">&darr;{product.discountPercentage}%</p>
       <p className="line-through text-xs sm:text-base">${original.toFixed(0)}</p>
       <p className="text-black font-bold text-xs sm:text-sm md:text-lg">${product.price}</p>
       </span>
-      <div className="flex flex-col sm:flex-row justify-between items-center mt-2 mx-1 gap-2">
+      <div className="flex flex-col sm:flex-row justify-between items-center mt-2 mx-1 gap-1.5">
         <button
-          className="border-1 bg-[#FF735C] text-white text-xs lg:text-sm active:bg-white active:text-[#FF735C] active:scale-95 transition rounded-lg px-1 py-2 sm:px-2 sm:py-2.5 cursor-pointer w-full lg:w-auto"
+          className="border-1 bg-[#FF735C] text-white text-[10px] lg:text-sm active:bg-white active:text-[#FF735C] active:scale-95 transition rounded-lg px-0.5 py-1 sm:px-2 sm:py-2.5 cursor-pointer w-full lg:w-auto"
           onClick={(e) => {
             e.stopPropagation();
             dispatch(addToCart(product));
@@ -54,8 +54,8 @@ function ProductCard({ product }) {
         >
           Add To Cart
         </button >
-        <button className="border-1 rounded-lg text-xs lg:text-sm px-1 py-2 sm:px-2 sm:py-2.5 cursor-pointer w-full lg:w-auto">
-          Buy Now <span className="text-xs">&#9889;</span>
+        <button className="border-1 rounded-lg text-[10px] lg:text-sm px-0.5 py-1 sm:px-2 sm:py-2.5 cursor-pointer w-full lg:w-auto">
+          Buy Now <span className="text-[10px]">&#9889;</span>
         </button>
       </div>
     </div>
