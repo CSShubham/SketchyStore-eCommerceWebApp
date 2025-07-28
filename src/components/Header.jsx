@@ -2,7 +2,7 @@ import { useState, useMemo, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { fetchCategories } from "../slice/ProductAction";
-
+import { CircleUserRound,ShoppingCart } from "lucide-react";
 function Header() {
   const [isOpen, setISOpen] = useState(false);
   const navigate = useNavigate();
@@ -22,11 +22,11 @@ function Header() {
   return (
     <header className=" flex  justify-between bg-[#ff735c] md:bg-white items-center px-4 lg:px-10 text-black py-4 sm:py-6">
       <NavLink to='/' className="text-xl lg:text-2xl font-semibold  tracking-wider text-white md:text-[#ff735c]">SketchyStore</NavLink>
-      <nav className="hidden md:flex md:flex-row gap-4 lg:gap-10 md:w-auto items-center">
+      <nav className="flex gap-4 lg:gap-10 md:w-auto items-center">
         <NavLink
           to="/"
           className={({ isActive }) =>
-            `block py-2 pr-4 pl-3 ${
+            `hidden md:block py-2 pr-4 pl-3 ${
               isActive ? "text-orange-700" : ""
             } duration-200 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-orange-700 lg:p-0`
           }
@@ -36,14 +36,14 @@ function Header() {
         <NavLink
           to="/home"
           className={({ isActive }) =>
-            `block py-2 pr-4 pl-3 ${
+            `hidden md:block py-2 pr-4 pl-3 ${
               isActive ? "text-orange-700" : ""
             } duration-200 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-orange-700 lg:p-0`
           }
         >
           Shop
         </NavLink>
-        <div className="relative  hover:text-orange-700 ">
+        <div className="relative hidden md:block  hover:text-orange-700 ">
           <button onClick={() => setISOpen(!isOpen)}>
              Categories &nbsp; {/*<span className="inline-block hover:rotate-90">&gt;</span>} */}
 
@@ -66,7 +66,7 @@ function Header() {
           onClick={() => navigate("/home/cart")}
           className="cursor-pointer hover:text-orange-700 relative"
         >
-          Cart
+          <ShoppingCart className="text-white sm:text-black" size={24} />
           {cartQuantity > 0 && (
         <span className="absolute -top-2 -right-4 bg-red-500 text-white rounded-full px-2 text-xs">
           {cartQuantity}
@@ -79,10 +79,10 @@ function Header() {
           className={({ isActive }) =>
             `block py-2 pr-4  pl-3 ${
               isActive ? "text-orange-700" : ""
-            } duration-200 border-1 border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-orange-700 lg:p-0`
+            } duration-200 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-orange-700 lg:p-0`
           }
         >
-          Login
+          <CircleUserRound className="text-white sm:text-black" size={24} />
         </NavLink>
       </nav>
     </header>

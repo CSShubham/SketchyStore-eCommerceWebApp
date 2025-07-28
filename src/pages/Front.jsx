@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 function Front() {
     const navigate=useNavigate()
   return (
-    <div className="flex flex-col lg:flex-row  w-full h-[700px]">
+    <div className="flex flex-col lg:flex-row sm:mb-18 w-full h-[700px]">
         <div className='absolute lg:block -translate-x-60 lg:-translate-x-150 translate-y-110 md:hidden lg:translate-y-10 -z-1 opacity-90 bg-[#FF735C] lg:h-140 lg:w-250 h-60 w-120 rounded-[80%]'>
         {/* orange box */}
         </div>
