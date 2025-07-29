@@ -20,8 +20,8 @@ function Header() {
   };
 
   return (
-    <header className=" flex  justify-between bg-[#ff735c] md:bg-white items-center px-4 lg:px-10 text-black py-4 sm:py-6">
-      <NavLink to='/' className="text-xl lg:text-2xl font-semibold  tracking-wider text-white md:text-[#ff735c]">SketchyStore</NavLink>
+    <header className=" flex  justify-between bg-[#ff735c] md:bg-white items-center px-4 lg:px-10 shadow-md text-black py-3 sm:py-6">
+      <NavLink to='/' className=" text-lg md:text-xl lg:text-2xl font-semibold  tracking-wider text-white md:text-[#ff735c]">SketchyStore</NavLink>
       <nav className="flex gap-4 lg:gap-10 md:w-auto items-center">
         <NavLink
           to="/"
@@ -64,7 +64,7 @@ function Header() {
         </div>
         <div
           onClick={() => navigate("/home/cart")}
-          className="cursor-pointer hover:text-orange-700 relative"
+          className="cursor-pointer hover:text-orange-700 py-2 pl-3 relative"
         >
           <ShoppingCart className="text-white sm:text-black" size={24} />
           {cartQuantity > 0 && (
@@ -77,7 +77,7 @@ function Header() {
         <NavLink
           to="/home/account"
           className={({ isActive }) =>
-            `block py-2 pr-4  pl-3 ${
+            `block py-2 pr-2  pl-3 ${
               isActive ? "text-orange-700" : ""
             } duration-200 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-orange-700 lg:p-0`
           }
