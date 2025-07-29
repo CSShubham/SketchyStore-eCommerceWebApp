@@ -27,7 +27,7 @@ const productsSlice = createSlice({
     },
     setProductByCategories(state,action){
       state.productByCategories=action.payload;
-      console.log(state.productByCategories)
+      // console.log(state.productByCategories)
     },
     setError(state, action) {
       state.loading = false;
