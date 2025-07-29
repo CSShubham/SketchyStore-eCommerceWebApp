@@ -42,13 +42,13 @@ function ProductPage() {
   const original = originalPrice(product.price, product.discountPercentage);
 
   return (
-    <div className="h-full w-full py-1 px-10">
-      <div className="flex gap-4">
+    <div className="h-full w-full py-2 px-1 sm:py-1 sm:px-10">
+      <div className="flex flex-col lg:flex-row gap-4">
         {" "}
         {/* both horizontal div container image and the details*/}
         <div className=" w-20">
           <button
-            className="px-3 py-2 border-1 rounded-xl flex items-center text-white bg-[#FF735C] active:text-[#FF735C] active:bg-white"
+            className="px-3 py-2 border-1 rounded-xl hidden sm:flex items-center text-white bg-[#FF735C] active:text-[#FF735C] active:bg-white"
             onClick={() => {
               navigate(-1);
             }}
@@ -60,12 +60,12 @@ function ProductPage() {
         <div className=" border-0 ">
           {" "}
           {/*div container image and buttons*/}
-          <div className="min-w-120 h-110 border-0">
+          <div className="sm:min-w-120 h-90 sm:h-110 border-0">
             <ImageCarousel images={product.images} />
           </div>
-          <div className="flex p-2 border-0 justify-between items-center mt-2 ">
+          <div className="flex px-5 py-1 sm:p-2 border-0 justify-between items-center mt-2 ">
             <button
-              className="border-1 h-15 w-55 bg-[#FF735C] text-white text-sm font-semibold  active:bg-white active:text-[#FF735C] active:scale-95 transition rounded-lg px-2 py-2.5 cursor-pointer"
+              className="border-1 h-12 w-40 sm:h-15 sm:w-55 bg-[#FF735C] text-white text-sm font-semibold  active:bg-white active:text-[#FF735C] active:scale-95 transition rounded-lg px-2 py-2.5 cursor-pointer"
               onClick={(e) => {
                 e.stopPropagation();
                 dispatch(addToCart(product));
@@ -76,7 +76,7 @@ function ProductPage() {
             >
               Add To Cart
             </button>
-            <button className="border-1 h-15 w-55 rounded-lg font-semibold  text-sm px-2 py-2.3 cursor-pointer">
+            <button className="border-1 h-12 w-40 sm:h-15 sm:w-55 rounded-lg font-semibold  text-sm px-2 py-2.3 cursor-pointer">
               Buy Now <span className="text-xs">&#9889;</span>
             </button>
           </div>
@@ -85,58 +85,58 @@ function ProductPage() {
           {" "}
           {/*div container details*/}
           <div className="flex justify-between">
-            <h1 className="text-xl font-bold text-gray-400">{product.brand}</h1>
-            <h2 className="text-xl text-zinc-400">{product.category}</h2>
+            <h1 className="text-base sm:text-xl font-bold text-gray-400">{product.brand}</h1>
+            <h2 className="text-base sm:text-xl text-zinc-400">{product.category}</h2>
           </div>
-          <h1 className="text-4xl font-semibold">{product.title}</h1>
-          <p className="text-green-600 font-semibold text-lg">Special Price</p>
+          <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold">{product.title}</h1>
+          <p className="text-green-600 font-semibold text-base sm:text-lg">Special Price</p>
           <div className="flex  items-baseline gap-3">
             <p className="text-black font-bold text-2xl">${product.price}</p>
             <p className="line-through text-gray-500">${original.toFixed(0)}</p>
-            <p className="text-green-600 font-semibold text-md">
+            <p className="text-green-600 font-semibold text-sm sm:text-base">
               {product.discountPercentage}% off
             </p>
           </div>
-          <span className=" text-center text-white font-semibold rounded-2xl py-0.3 border-2 w-15 bg-green-600">
+          <span className=" text-center text-white font-semibold rounded-2xl py-0.5 sm:py-0.3 text-sm sm:text-base border-2 w-15 bg-green-600">
             {product.rating}&#9734;
           </span>
-          <div className="text-xl font-medium text-zinc-700 tracking-wide">
+          <div className="text-sm sm:text-lg md:text-xl font-medium text-zinc-700 tracking-wide">
             {product.description}
           </div>
-          <div className="flex gap-2 items-baseline mt-3">
-            <span className="text-xl w-5  opacity-85">&#128204;</span>
-            <span className="text-2xl font-semibold text-zinc-700">
+          <div className="flex gap-3 items-baseline mt-3">
+            <span className="text-lg sm:text-xl w-5  opacity-85">&#128204;</span>
+            <span className="text-lg sm:text-2xl font-semibold text-zinc-700">
               {product.shippingInformation}
             </span>
           </div>
           <div className=" flex *:rounded-md h-30 mt-3 *:border-2 *:w-50 gap-10 *:flex *:flex-col *:p-3 *:justify-center *:border-green-600 *:items-center">
             <div>
-              <span className="text-xl mb-2">&#x1F4E6;</span>
+              <span className="text-[12px] sm:text-xl mb-2">&#x1F4E6;</span>
               {product.returnPolicy}
             </div>
             <div>
-              <span className="text-2xl mb-2">&#128184;</span> Cash on Delivery
+              <span className="text-xl sm:text-2xl mb-2">&#128184;</span> Cash on Delivery
             </div>
             <div>
-              <span className="text-xl mb-2">&#128272;</span>
+              <span className="text-lg sm:text-xl mb-2">&#128272;</span>
               {product.warrantyInformation}
             </div>
           </div>
         </div>
       </div>
       {/* product Details & reviews */}
-      <div className="border-0 mt-3 flex  *:w-170 *:flex *:flex-col *:p-5">
-        <div>
-          <h1 className="text-center text-4xl text-zinc-700 tracking-normal">
+      <div className="border-0 mt-3 mb-5 gap-5 lg:gap-25 flex flex-col lg:flex-row ">
+        <div className="flex-col  ">
+          <h1 className="text-center text-2xl font-bold sm:text-4xl  text-zinc-700 tracking-normal">
             Reviews
           </h1>
-          <div className="flex px-5 mt-5 gap-5 justify-center items-center">
+          <div className="flex text-xl sm:text-base md:text-sm flex-wrap sm:flex-nowrap px-5 mt-5 gap-5 justify-center items-center">
             {(product.reviews || []).map((review, idx) => (
               <div
                 key={`${review.reviewerEmail || review.reviewerName}-${idx}`}
                 className="border-2 rounded-xl h-50 flex flex-col justify-center items-center py-5 px-1 w-full"
               >
-                <div className="border-0 flex justify-center items-center rounded-[50%] mb-1 font-bold bg-zinc-400 h-10 w-10">
+                <div className="border-0 flex  justify-center items-center rounded-[50%] mb-1 font-bold bg-zinc-400 h-10 w-10">
                   {review.reviewerName?.charAt(0)}
                 </div>
                 <span>{review.reviewerName}</span>
@@ -149,11 +149,11 @@ function ProductPage() {
             ))}
           </div>
         </div>
-        <div className="flex items-center ">
-          <h1 className="text-center text-4xl text-zinc-700 tracking-normal">
+        <div className="flex flex-col  items-center ">
+          <h1 className="text-center text-2xl sm:text-4xl font-bold text-zinc-700 tracking-normal">
             Product Details
           </h1>
-          <div className="border-0 w-150 flex flex-col mt-2 gap-3">
+          <div className="border-0 sm:w-150 flex flex-col mt-2 gap-3">
             <div className="flex justify-around items-center">
               <p className="text-xl text-zinc-500">Category</p>
 
