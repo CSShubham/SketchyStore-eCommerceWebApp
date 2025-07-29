@@ -109,9 +109,9 @@ function ProductPage() {
               {product.shippingInformation}
             </span>
           </div>
-          <div className=" flex *:rounded-md h-30 mt-3 *:border-2 *:w-50 gap-10 *:flex *:flex-col *:p-3 *:justify-center *:border-green-600 *:items-center">
+          <div className=" flex *:rounded-md h-30 mt-3 *:border-2 *:w-50 gap-8 *:flex *:flex-col *:p-3 *:justify-center *:border-green-600 *:items-center">
             <div>
-              <span className="text-[12px] sm:text-xl mb-2">&#x1F4E6;</span>
+              <span className="text-lg sm:text-xl mb-2">&#x1F4E6;</span>
               {product.returnPolicy}
             </div>
             <div>
