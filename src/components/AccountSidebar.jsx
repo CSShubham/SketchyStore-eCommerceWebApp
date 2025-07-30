@@ -5,20 +5,20 @@ export default function Sidebar() {
   const isMobile = window.matchMedia('(max-width: 767px)').matches;
  
   return (
-    <div className="block bg-white p-4">
+    <div className="block bg-white  p-4">
       {/* Profile avatar/info */}
       <div className="flex items-center gap-4 mb-6">
         <span className="w-16 h-16 bg-gray-400 justify-center items-center flex rounded-full">
           J
         </span>
         <div>
-          <h2 className="text-lg font-bold">John Doe</h2>
-          <p className="text-gray-500 text-sm">johndoe@example.com</p>
+          <h2 className="text-xl font-bold">John Doe</h2>
+          <p className="text-gray-500 text-base">johndoe@example.com</p>
         </div>
       </div>
 
       {/* Navigation items using NavLink */}
-      <nav className="space-y-2">
+      <nav className="space-y-2 text-lg">
         <NavLink
           to={isMobile ? "/home/account/mprofile" : "/home/account"}
           className={({ isActive }) =>

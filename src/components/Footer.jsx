@@ -35,7 +35,13 @@ function Footer() {
           <Package size={24} />
         <span className="text-[10px] pt-1">Orders</span>
           </NavLink>
-        <NavLink className="text-black py-2 px-2 flex flex-col items-center justify-center">
+        <NavLink 
+        to="/home/account"
+        className={({ isActive }) =>
+            `py-2 px-2 flex flex-col items-center justify-center ${
+              isActive ? "text-orange-700" : ""
+            }`
+          }>
           <CircleUserRound size={24} />
         <span className="text-[10px] pt-1">Account</span>
           </NavLink>
