@@ -20,7 +20,7 @@ function App() {
           <Route path="/home/:productId" element={<ProductPage />} />
           <Route path="/home/cart" element={<Cart />} />
           <Route path="/home/account" element={<Account />}>
-            <Route path="profile" element={<ProfileForm />} />
+            <Route index element={<ProfileForm />} />
           </Route>
            <Route path="/home/account/mprofile" element={<ProfileForm />} />
           {/* Add more routes as needed */}
