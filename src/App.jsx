@@ -7,30 +7,35 @@ import Cart from "./pages/Cart";
 import ProductPage from "./pages/ProductPage";
 import Front from "./pages/Front";
 import { ToastContainer } from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css';
+import "react-toastify/dist/ReactToastify.css";
+import ProfileForm from "./components/ProfileForm";
 function App() {
   return (
     <>
-    <Routes>
-      <Route path="/" element={<MainLayout />}>
-      <Route path="/" element={<Front/>}/>
-        <Route path="/home" element={<Home />} />
-        <Route path="/home/category/:category" element={<Product />} />
-        <Route path='/home/:productId' element={<ProductPage />} />
-        <Route path="/home/cart" element={<Cart />} />
-        {/* Add more routes as needed */}
-      </Route>
-      <Route path="/home/account" element={<Account />} />
-    </Routes>
-    <ToastContainer
-    position="top-center"
-    autoClose={2000}
-    hideProgressBar={false}
-    closeOnClick
-    pauseOnHover
-    draggable
-    />
-</>
+      <Routes>
+        <Route path="/" element={<MainLayout />}>
+          <Route path="/" element={<Front />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/home/category/:category" element={<Product />} />
+          <Route path="/home/:productId" element={<ProductPage />} />
+          <Route path="/home/cart" element={<Cart />} />
+          <Route path="/home/account" element={<Account />}>
+            <Route path="profile" element={<ProfileForm />} />
+          </Route>
+           <Route path="/home/account/mprofile" element={<ProfileForm />} />
+          {/* Add more routes as needed */}
+        </Route>
+       
+      </Routes>
+      <ToastContainer
+        position="top-center"
+        autoClose={2000}
+        hideProgressBar={false}
+        closeOnClick
+        pauseOnHover
+        draggable
+      />
+    </>
   );
 }
 

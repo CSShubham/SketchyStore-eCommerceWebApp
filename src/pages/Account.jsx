@@ -1,31 +1,29 @@
-import React from 'react'
-import { useNavigate } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { useLocation, useNavigate, Outlet } from 'react-router-dom';
+import Sidebar from '../components/AccountSidebar';
+
 function Account() {
-  const navigate=useNavigate();
+  const location = useLocation();
+  const navigate = useNavigate();
+  const isDesktop = window.matchMedia('(min-width: 768px)').matches;
+  const isMobile = window.matchMedia('(max-width: 767px)').matches;
+
+  useEffect(() => {
+    if (isMobile && location.pathname === '/home/account/profile') {
+      navigate('/home/account/mprofile'); // push a new page on mobile
+    } else if (isDesktop && location.pathname === '/home/account') {
+      navigate('/home/account/profile', { replace: true }); // replace on desktop
+    }
+  }, [isDesktop, isMobile, location.pathname, navigate]);
+
   return (
-    <div className='p-10'>
-        <div className='px-10'>
-          <button
-          className="px-5 py-2 border-1 rounded-xl flex items-center text-white bg-[#FF735C] active:text-[#FF735C] active:bg-white"
-          onClick={() => {
-            navigate(-1);
-          }}
-        >
-          {" "}
-          &larr; Back{" "}
-        </button>
-        </div>
-       <div className="flex  flex-col justify-center items-center h-150 border-0">
-          <img
-            src="/underConstruction.jpg"
-            alt="imageloading....."
-            className="h-120 w-120"
-          />
-          
-        </div>
-      
+    <div className="min-h-screen flex flex-col md:flex-row w-full">
+      <Sidebar />
+      <div className="flex-1 hidden md:block bg-gray-50 p-4">
+        <Outlet />
+      </div>
     </div>
-  )
+  );
 }
 
-export default Account
+export default Account;
