@@ -9,6 +9,7 @@ import Front from "./pages/Front";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import ProfileForm from "./components/ProfileForm";
+import WishlistPage from "./pages/WishlistPage";
 function App() {
   return (
     <>
@@ -21,6 +22,7 @@ function App() {
           <Route path="/home/cart" element={<Cart />} />
           <Route path="/home/account" element={<Account />}>
             <Route index element={<ProfileForm />} />
+            <Route path="/home/account/wishlist" element={<WishlistPage/>}/>
           </Route>
            <Route path="/home/account/mprofile" element={<ProfileForm />} />
           {/* Add more routes as needed */}

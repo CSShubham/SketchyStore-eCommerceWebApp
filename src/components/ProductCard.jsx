@@ -3,7 +3,8 @@ import { addToCart } from "../slice/CartSlice";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { toast } from "react-toastify";
-
+import { Heart } from 'lucide-react';
+import WishlistButton from "./WishlistButton";
 function ProductCard({ product }) {
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -24,11 +25,11 @@ function ProductCard({ product }) {
     <div
       //   key={product.id}
       onClick={() => navigate(`/home/${product.id}`)}
-      className="border-1 p-2 sm:p-4  rounded-lg shadow cursor-pointer "
+      className="border-1 p-2 sm:p-4  rounded-lg shadow  "
     >
       <div className="flex justify-between items-center">
       <p className="text-[10px] sm:text-sm text-gray-500 capitalize">{product.category}</p>
-      <span className="pr-2 sm:pr-5 text-[10px] lg:text-xl">&#9825;</span>
+      <WishlistButton product={product} />
       </div>
       <img
         src={product.thumbnail}
