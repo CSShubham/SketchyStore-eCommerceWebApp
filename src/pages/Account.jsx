@@ -15,7 +15,7 @@ function Account() {
           <button
             className=" active:rounded-xl active:text-white active:bg-[#FF735C] text-[#FF735C] bg-white"
             onClick={() => {
-              navigate(-1);
+              navigate("/home");
             }}
           >
             {" "}

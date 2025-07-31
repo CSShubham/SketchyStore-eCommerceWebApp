@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { removeFromCart } from "../slice/CartSlice";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import { ShoppingCart } from "lucide-react";
 function Cart() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -10,31 +11,31 @@ function Cart() {
   const cartQuantity = cartItems.reduce((sum, item) => sum + item.quantity, 0);
   return (
     <div className="min-w-full min-h-screen">
-      <h2 className="text-center text-5xl font-roboto font-semibold border-b-2 p-3">
-        Cart
+      <h2 className="flex items-center justify-center text-3xl md:text-5xl  font-semibold border-b-2 p-3">
+       <span className="flex items-center gap-1">Cart<ShoppingCart className=" md:hidden pt-1" size={28}/> </span>
       </h2>
       <div className="flex justify-between items-center px-5 py-4 ">
         <button
-          className="px-3 py-2 border-1 rounded-xl flex items-center text-white bg-[#FF735C] active:text-[#FF735C] active:bg-white"
+          className="px-2 py-1 md:px-3 md:py-2 border-1 rounded-xl flex items-center text-base md:text-lg text-white bg-[#FF735C] active:text-[#FF735C] active:bg-white"
           onClick={() => {
-            navigate(-1);
+            navigate("/home");
           }}
         >
           {" "}
           &larr; Back{" "}
         </button>
-        <div className=" text-xl font-bold">
+        <div className=" text-lg md:text-xl font-semibold md:font-bold">
           Total Cart Items : {cartQuantity}
         </div>
       </div>
       {cartItems.length === 0 ? (
-        <div className="flex  flex-col justify-center items-center h-150">
+        <div className="flex  flex-col justify-center items-center lg:h-150">
           <img
             src="/emptyCart.jpg"
             alt="imageloading....."
-            className="h-120 w-120"
+            className="h-50 w-50 md:h-80 md:w-80 lg:h-120 lg:w-120"
           />
-          <p className="text-3xl text-[#FF735C] tracking-wider font-semibold ">
+          <p className="text-xl md:text-3xl text-[#FF735C] tracking-wider font-semibold ">
             Your Cart is Empty
           </p>
         </div>
