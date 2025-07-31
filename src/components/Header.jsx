@@ -62,27 +62,29 @@ function Header() {
             </ul>
           )}
         </div>
-        <div
-          onClick={() => navigate("/home/cart")}
-          className="cursor-pointer hover:text-orange-700 py-2 pl-3 relative"
+        <NavLink
+          to="/cart"
+          className={({ isActive }) =>`${
+              isActive ? " md:text-orange-700" : ""
+            } cursor-pointer hover:text-orange-700 py-2 pl-3 relative`}
         >
-          <ShoppingCart className="text-white sm:text-black" size={24} />
+          <ShoppingCart size={24} />
           {cartQuantity > 0 && (
         <span className="absolute -top-2 -right-4 bg-red-500 text-white rounded-full px-2 text-xs">
           {cartQuantity}
         </span>
       )}
-        </div>
+        </NavLink>
 
         <NavLink
-          to="/home/account"
+          to="/account"
           className={({ isActive }) =>
             `block py-2 pr-2  pl-3 ${
-              isActive ? "text-orange-700" : ""
-            } duration-200 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-orange-700 lg:p-0`
+              isActive ? "md:text-orange-700" : ""
+            } duration-200  lg:hover:bg-transparent lg:border-0 hover:text-orange-700 lg:p-0`
           }
         >
-          <CircleUserRound className="text-white sm:text-black" size={24} />
+          <CircleUserRound  size={24} />
         </NavLink>
       </nav>
     </header>

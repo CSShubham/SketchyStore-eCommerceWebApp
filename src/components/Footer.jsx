@@ -36,7 +36,7 @@ function Footer() {
         <span className="text-[10px] pt-1">Orders</span>
           </NavLink>
         <NavLink 
-        to="/home/account"
+        to="/account"
         className={({ isActive }) =>
             `py-2 px-2 flex flex-col items-center justify-center ${
               isActive ? "text-orange-700" : ""

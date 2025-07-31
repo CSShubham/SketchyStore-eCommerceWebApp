@@ -20,7 +20,8 @@ export default function Sidebar() {
       {/* Navigation items using NavLink */}
       <nav className="space-y-2 text-lg">
         <NavLink
-          to={isMobile ? "/home/account/mprofile" : "/home/account"}
+          to={isMobile ? "/account/mprofile" : "/account"}
+          end
           className={({ isActive }) =>
             `flex items-center gap-2 p-2 rounded ${
               isActive ? "bg-gray-100 font-semibold" : "hover:bg-gray-100"
@@ -31,7 +32,7 @@ export default function Sidebar() {
         </NavLink>
 
         <NavLink
-          to="/home/account/orders"
+          to="/account/orders"
           className={({ isActive }) =>
             `flex items-center gap-2 p-2 rounded ${
               isActive ? "bg-gray-100 font-semibold" : "hover:bg-gray-100"
@@ -42,7 +43,7 @@ export default function Sidebar() {
         </NavLink>
 
         <NavLink
-          to="/home/account/wishlist"
+          to={isMobile ? "/account/mwishlist" : "wishlist"}
           className={({ isActive }) =>
             `flex items-center gap-2 p-2 rounded ${
               isActive ? "bg-gray-100 font-semibold" : "hover:bg-gray-100"
@@ -53,7 +54,7 @@ export default function Sidebar() {
         </NavLink>
 
         <NavLink
-          to="/home/account/payment"
+          to="/account/payment"
           className={({ isActive }) =>
             `flex items-center gap-2 p-2 rounded ${
               isActive ? "bg-gray-100 font-semibold" : "hover:bg-gray-100"

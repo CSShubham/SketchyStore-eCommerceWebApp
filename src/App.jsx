@@ -19,12 +19,13 @@ function App() {
           <Route path="/home" element={<Home />} />
           <Route path="/home/category/:category" element={<Product />} />
           <Route path="/home/:productId" element={<ProductPage />} />
-          <Route path="/home/cart" element={<Cart />} />
-          <Route path="/home/account" element={<Account />}>
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/account" element={<Account />}>
             <Route index element={<ProfileForm />} />
-            <Route path="/home/account/wishlist" element={<WishlistPage/>}/>
+            <Route path="wishlist" element={<WishlistPage/>}/>
           </Route>
-           <Route path="/home/account/mprofile" element={<ProfileForm />} />
+           <Route path="/account/mprofile" element={<ProfileForm />} />
+           <Route path="/account/mwishlist" element={<WishlistPage/>}/>
           {/* Add more routes as needed */}
         </Route>
        
