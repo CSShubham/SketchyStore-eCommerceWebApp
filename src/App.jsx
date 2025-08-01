@@ -10,6 +10,7 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import ProfileForm from "./components/ProfileForm";
 import WishlistPage from "./pages/WishlistPage";
+import CheckoutPage from "./pages/CheckoutPage";
 function App() {
   return (
     <>
@@ -20,15 +21,15 @@ function App() {
           <Route path="/home/category/:category" element={<Product />} />
           <Route path="/home/:productId" element={<ProductPage />} />
           <Route path="/cart" element={<Cart />} />
+          <Route path="/checkout/:productId" element={<CheckoutPage/>} />
           <Route path="/account" element={<Account />}>
             <Route index element={<ProfileForm />} />
-            <Route path="wishlist" element={<WishlistPage/>}/>
+            <Route path="wishlist" element={<WishlistPage />} />
           </Route>
-           <Route path="/account/mprofile" element={<ProfileForm />} />
-           <Route path="/account/mwishlist" element={<WishlistPage/>}/>
+          <Route path="/account/mprofile" element={<ProfileForm />} />
+          <Route path="/account/mwishlist" element={<WishlistPage />} />
           {/* Add more routes as needed */}
         </Route>
-       
       </Routes>
       <ToastContainer
         position="top-center"

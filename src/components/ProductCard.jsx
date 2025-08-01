@@ -64,7 +64,13 @@ function ProductCard({ product }) {
         >
           Add To Cart
         </button>
-        <button className="border-1 rounded-lg text-[10px] lg:text-sm px-0.5 py-1 sm:px-2 sm:py-2.5 cursor-pointer w-full lg:w-auto">
+        <button
+          onClick={(e) => {
+            e.stopPropagation();
+            navigate(`/checkout/${product.id}`);
+          }}
+          className="border-1 rounded-lg text-[10px] lg:text-sm px-0.5 py-1 sm:px-2 sm:py-2.5 cursor-pointer w-full lg:w-auto"
+        >
           Buy Now <span className="text-[10px]">&#9889;</span>
         </button>
       </div>

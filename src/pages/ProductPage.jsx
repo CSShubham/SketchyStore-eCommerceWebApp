@@ -76,7 +76,12 @@ function ProductPage() {
             >
               Add To Cart
             </button>
-            <button className="border-1 h-12 w-40 sm:h-15 sm:w-55 rounded-lg font-semibold  text-sm px-2 py-2.3 cursor-pointer">
+            <button 
+            onClick={() =>{ 
+              navigate(`/checkout/${product.id}`);
+              
+            }}
+            className="border-1 h-12 w-40 sm:h-15 sm:w-55 rounded-lg font-semibold  text-sm px-2 py-2.3 cursor-pointer">
               Buy Now <span className="text-xs">&#9889;</span>
             </button>
           </div>

@@ -12,7 +12,10 @@ function Cart() {
   return (
     <div className="min-w-full min-h-screen">
       <h2 className="flex items-center justify-center text-3xl md:text-5xl  font-semibold border-b-2 p-3">
-       <span className="flex items-center gap-1">Cart<ShoppingCart className=" md:hidden pt-1" size={28}/> </span>
+        <span className="flex items-center gap-1">
+          Cart
+          <ShoppingCart className=" md:hidden pt-1" size={28} />{" "}
+        </span>
       </h2>
       <div className="flex justify-between items-center px-5 py-4 ">
         <button
@@ -73,7 +76,13 @@ function Cart() {
                     >
                       Remove
                     </button>
-                    <button className="border-1 rounded-lg text-sm px-2 py-2.5 cursor-pointer">
+                    <button
+                      onClick={() => {
+                        
+                        navigate(`/checkout/${item.id}`);
+                      }}
+                      className="border-1 rounded-lg text-sm px-2 py-2.5 cursor-pointer"
+                    >
                       Place order <span className="text-xs">&#9889;</span>
                     </button>
                   </div>
