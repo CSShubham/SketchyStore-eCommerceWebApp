@@ -222,7 +222,7 @@ function CheckoutPage() {
               <div className="text-sm text-gray-600 mt-4 space-y-1">
                 <div className="flex justify-between">
                   <span>Subtotal</span>
-                  <span>${count * product.price}</span>
+                  <span>${(count * product.price).toFixed(2)}</span>
                 </div>
                 <div className="flex justify-between">
                   <span>Shipping</span>
@@ -234,7 +234,7 @@ function CheckoutPage() {
                 </div> */}
                 <div className="flex justify-between font-semibold text-black mt-2">
                   <span>Total</span>
-                  <span>${count * product.price + 5}</span>
+                  <span>${(count * product.price.toFixed(2) + 5).toFixed(2)}</span>
                 </div>
               </div>
 
