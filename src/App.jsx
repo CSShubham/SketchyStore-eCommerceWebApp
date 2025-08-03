@@ -11,6 +11,9 @@ import "react-toastify/dist/ReactToastify.css";
 import ProfileForm from "./components/ProfileForm";
 import WishlistPage from "./pages/WishlistPage";
 import CheckoutPage from "./pages/CheckoutPage";
+import Login from "./pages/auth/Login";
+import Signup from "./pages/auth/Signup";
+import Privateroutes from "./routes/Privateroutes";
 function App() {
   return (
     <>
@@ -18,16 +21,53 @@ function App() {
         <Route path="/" element={<MainLayout />}>
           <Route path="/" element={<Front />} />
           <Route path="/home" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
           <Route path="/home/category/:category" element={<Product />} />
           <Route path="/home/:productId" element={<ProductPage />} />
-          <Route path="/cart" element={<Cart />} />
-          <Route path="/checkout/:productId" element={<CheckoutPage/>} />
-          <Route path="/account" element={<Account />}>
+          <Route
+            path="/cart"
+            element={
+              <Privateroutes>
+                <Cart />
+              </Privateroutes>
+            }
+          />
+          <Route
+            path="/checkout/:productId"
+            element={
+              <Privateroutes>
+                <CheckoutPage />
+              </Privateroutes>
+            }
+          />
+          <Route
+            path="/account"
+            element={
+              <Privateroutes>
+                <Account />
+              </Privateroutes>
+            }
+          >
             <Route index element={<ProfileForm />} />
             <Route path="wishlist" element={<WishlistPage />} />
           </Route>
-          <Route path="/account/mprofile" element={<ProfileForm />} />
-          <Route path="/account/mwishlist" element={<WishlistPage />} />
+          <Route
+            path="/account/mprofile"
+            element={
+              <Privateroutes>
+                <ProfileForm />
+              </Privateroutes>
+            }
+          />
+          <Route
+            path="/account/mwishlist"
+            element={
+              <Privateroutes>
+                <WishlistPage />
+              </Privateroutes>
+            }
+          />
           {/* Add more routes as needed */}
         </Route>
       </Routes>
