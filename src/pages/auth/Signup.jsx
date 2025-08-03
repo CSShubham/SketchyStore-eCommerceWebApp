@@ -35,7 +35,7 @@ const Signup = () => {
     );
   }
   return (
-    <div className="min-h-screen flex w-full items-center justify-center bg-gray-50 px-4">
+    <div className="min-h-screen flex w-full items-center  justify-center bg-gray-50 px-4">
       <div className="bg-white shadow-lg p-6 rounded-xl w-full max-w-md space-y-6">
         <div className="text-center mb-0">
           <UserPlus className="mx-auto text-blue-500 mb-2" size={36} />
