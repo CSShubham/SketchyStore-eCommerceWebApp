@@ -5,13 +5,14 @@ import { useNavigate } from "react-router-dom";
 import { Plus, Minus, ShieldCheck, ChevronLeft } from "lucide-react";
 import ImageCarousel from "../components/ImageCarousel";
 import Loading from "../components/Loading";
-
+import { useAuth } from "../contexts/AuthContext";
 function CheckoutPage() {
   const { productId } = useParams();
   const { items } = useSelector((state) => state.products);
   const [product, setProduct] = useState(null);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const {userData}=useAuth();
 
   const [count, setCount] = useState(1);
 
@@ -81,8 +82,10 @@ function CheckoutPage() {
                   <label className="text-sm font-medium">Full name *</label>
                   <input
                     type="text"
+                    value={userData.username}
                     required
-                    className="w-full p-2 mt-1 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-300"
+                    disabled
+                    className="w-full p-2 mt-1 border bg-gray-200 rounded focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-300"
                     placeholder="Enter full name"
                   />
                 </div>
@@ -91,8 +94,10 @@ function CheckoutPage() {
                   <label className="text-sm font-medium">Email address *</label>
                   <input
                     type="email"
+                    value={userData.email}
                     required
-                    className="w-full p-2 mt-1 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-300"
+                    disabled
+                    className="w-full p-2 mt-1 border rounded bg-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-300"
                     placeholder="Enter email address"
                   />
                 </div>
@@ -101,8 +106,10 @@ function CheckoutPage() {
                   <label className="text-sm font-medium">Phone number *</label>
                   <input
                     type="tel"
+                    value={userData.phoneNumber}
                     required
-                    className="w-full p-2 mt-1 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-300"
+                    disabled
+                    className="w-full p-2 mt-1 border bg-gray-200 rounded focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-300"
                     placeholder="Enter phone number"
                   />
                 </div>
@@ -111,7 +118,8 @@ function CheckoutPage() {
                   <label className="text-sm font-medium">Country *</label>
                   <select
                     required
-                    className=" w-full *:text-xs md:*text-lg p-2 mt-1 border  focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-300 rounded"
+                    disabled
+                    className=" w-full *:text-xs md:*text-lg p-2 mt-1 border bg-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-300 rounded"
                   >
                     <option>India</option>
                     <option>USA</option>
@@ -123,8 +131,10 @@ function CheckoutPage() {
                     <label className="text-sm font-medium">City</label>
                     <input
                       type="text"
+                      value={userData.address.city}
                       required
-                      className="w-full p-2 mt-1 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-300"
+                      disabled
+                      className="w-full p-2 mt-1 border rounded bg-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-300"
                       placeholder="Enter city"
                     />
                   </div>
@@ -132,8 +142,10 @@ function CheckoutPage() {
                     <label className="text-sm font-medium">State</label>
                     <input
                       type="text"
+                      value={userData.address.state}
                       required
-                      className="w-full p-2 mt-1 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-300"
+                      disabled
+                      className="w-full p-2 mt-1 border rounded bg-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-300"
                       placeholder="Enter state"
                     />
                   </div>
@@ -141,8 +153,10 @@ function CheckoutPage() {
                     <label className="text-sm font-medium">ZIP Code</label>
                     <input
                       type="text"
+                      value={userData.address.postalCode}
                       required
-                      className="w-full p-2 mt-1 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-300"
+                      disabled
+                      className="w-full p-2 mt-1 border rounded bg-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-300"
                       placeholder="Enter ZIP code"
                     />
                   </div>

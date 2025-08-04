@@ -41,7 +41,6 @@ const Login = () => {
     return (
       <>
         <Loading />
-        <h1>loading</h1>
       </>
     );
   }
