@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { Home ,Store,Package,CircleUserRound} from "lucide-react";
+import { Home, Store, Package, CircleUserRound } from "lucide-react";
 function Footer() {
   return (
     <footer className="sm:bg-gray-800 fixed  bg-white left-0 shadow-md bottom-0 sm:static sm:text-white text-center  py-0 sm:px-4 sm:py-4 text-sm sm:text-base w-full">
@@ -18,7 +18,7 @@ function Footer() {
           }
         >
           <Home size={24} />
-        <span className="text-[10px] pt-1">Home</span>
+          <span className="text-[10px] pt-1">Home</span>
         </NavLink>
         <NavLink
           to="/home"
@@ -28,23 +28,31 @@ function Footer() {
             }`
           }
         >
-           <Store size={24} />
-        <span className="text-[10px] pt-1">Store</span>
+          <Store size={24} />
+          <span className="text-[10px] pt-1">Store</span>
         </NavLink>
-        <NavLink className="text-black py-2 px-2 flex flex-col items-center justify-center">
-          <Package size={24} />
-        <span className="text-[10px] pt-1">Orders</span>
-          </NavLink>
-        <NavLink 
-        to="/account"
-        className={({ isActive }) =>
+        <NavLink
+          to="/account/myorder"
+          className={({ isActive }) =>
             `py-2 px-2 flex flex-col items-center justify-center ${
               isActive ? "text-orange-700" : ""
             }`
-          }>
+          }
+        >
+          <Package size={24} />
+          <span className="text-[10px] pt-1">Orders</span>
+        </NavLink>
+        <NavLink
+          to="/account"
+          className={({ isActive }) =>
+            `py-2 px-2 flex flex-col items-center justify-center ${
+              isActive ? "text-orange-700" : ""
+            }`
+          }
+        >
           <CircleUserRound size={24} />
-        <span className="text-[10px] pt-1">Account</span>
-          </NavLink>
+          <span className="text-[10px] pt-1">Account</span>
+        </NavLink>
       </div>
     </footer>
   );

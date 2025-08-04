@@ -6,7 +6,9 @@ import { Plus, Minus, ShieldCheck, ChevronLeft } from "lucide-react";
 import ImageCarousel from "../components/ImageCarousel";
 import Loading from "../components/Loading";
 import { useAuth } from "../contexts/AuthContext";
+import { placeOrder } from "../slice/OrderSlice";
 function CheckoutPage() {
+  const isMobile = window.matchMedia("(max-width: 767px)").matches;
   const { productId } = useParams();
   const { items } = useSelector((state) => state.products);
   const [product, setProduct] = useState(null);
@@ -50,6 +52,8 @@ function CheckoutPage() {
   const original = originalPrice(product.price, product.discountPercentage);
   const handleSubmit = (e) => {
     e.preventDefault();
+    dispatch(placeOrder({ product, count }));
+    {isMobile ? navigate("/account/myorder") : navigate("/account/myorders")};
   };
 
   return (
@@ -253,6 +257,7 @@ function CheckoutPage() {
               </div>
 
               <button
+
                 type="submit"
                 className="w-full mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2 rounded"
               >
