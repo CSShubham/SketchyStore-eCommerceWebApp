@@ -15,6 +15,7 @@ import Login from "./pages/auth/Login";
 import Signup from "./pages/auth/Signup";
 import Privateroutes from "./routes/Privateroutes";
 import OrdersPage from "./pages/OrdersPage";
+import OrderSuccess from "./pages/OrderSuccess";
 function App() {
   return (
     <>
@@ -24,6 +25,7 @@ function App() {
           <Route path="/home" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
+          <Route path="/order-success" element={<OrderSuccess/>}/>
           <Route path="/home/category/:category" element={<Product />} />
           <Route path="/home/:productId" element={<ProductPage />} />
           <Route

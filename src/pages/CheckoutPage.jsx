@@ -53,7 +53,8 @@ function CheckoutPage() {
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(placeOrder({ product, count }));
-    {isMobile ? navigate("/account/myorder") : navigate("/account/myorders")};
+    // {isMobile ? navigate("/account/myorder") : navigate("/account/myorders")};
+    navigate('/order-success')
   };
 
   return (
