@@ -16,6 +16,7 @@ import Signup from "./pages/auth/Signup";
 import Privateroutes from "./routes/Privateroutes";
 import OrdersPage from "./pages/OrdersPage";
 import OrderSuccess from "./pages/OrderSuccess";
+import PaymentMethod from "./pages/PaymentMethod";
 function App() {
   return (
     <>
@@ -55,6 +56,7 @@ function App() {
             <Route index element={<ProfileForm />} />
             <Route path="wishlist" element={<WishlistPage />} />
             <Route path="myorders" element={<OrdersPage />} />
+            <Route path="paymentmethod" element={<PaymentMethod />} />
           </Route>
           <Route
             path="/account/mprofile"
@@ -69,6 +71,14 @@ function App() {
             element={
               <Privateroutes>
                 <WishlistPage />
+              </Privateroutes>
+            }
+          />
+            <Route
+            path="/account/mpaymentmethod"
+            element={
+              <Privateroutes>
+                <PaymentMethod />
               </Privateroutes>
             }
           />

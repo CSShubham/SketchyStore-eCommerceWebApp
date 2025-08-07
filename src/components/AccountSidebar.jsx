@@ -70,7 +70,7 @@ export default function Sidebar() {
         </NavLink>
 
         <NavLink
-          to="/account/payment"
+          to={isMobile ? "/account/mpaymentmethod" : "paymentmethod"}
           className={({ isActive }) =>
             `flex items-center gap-2 p-2 rounded ${
               isActive ? "bg-gray-100 font-semibold" : "hover:bg-gray-100"
