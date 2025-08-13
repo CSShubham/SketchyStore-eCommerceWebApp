@@ -4,6 +4,8 @@ import { removeFromCart } from "../slice/CartSlice";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { ShoppingCart } from "lucide-react";
+import { ChevronLeft } from "lucide-react";
+import WishlistButton from "../components/WishlistButton";
 function Cart() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -11,21 +13,21 @@ function Cart() {
   const cartQuantity = cartItems.reduce((sum, item) => sum + item.quantity, 0);
   return (
     <div className="min-w-full min-h-screen">
-      <h2 className="flex items-center justify-center text-3xl md:text-5xl  font-semibold border-b-2 p-3">
-        <span className="flex items-center gap-1">
-          Cart
+      <h2 className="flex items-center justify-center text-3xl md:text-5xl  font-semibold p-3">
+        <span className="flex items-center font-serif gap-1">
+          My Cart
           <ShoppingCart className=" md:hidden pt-1" size={28} />{" "}
         </span>
       </h2>
       <div className="flex justify-between items-center px-5 py-4 ">
         <button
-          className="px-2 py-1 md:px-3 md:py-2 border-1 rounded-xl flex items-center text-base md:text-lg text-white bg-[#FF735C] active:text-[#FF735C] active:bg-white"
+          className="px-0 py-1 md:px-0 pr-2 md:pr-3 md:py-2 border-1 rounded-xl flex items-center text-base md:text-lg text-white bg-[#FF735C] active:text-[#FF735C] active:bg-white"
           onClick={() => {
             navigate("/home");
           }}
         >
           {" "}
-          &larr; Back{" "}
+          <ChevronLeft className="flex justify-center items-center" size={30} /> Continue Shopping{" "}
         </button>
         <div className=" text-lg md:text-xl font-semibold md:font-bold">
           Total Cart Items : {cartQuantity}
@@ -51,11 +53,11 @@ function Cart() {
                   key={item.id}
                   className="border p-2 px-3 rounded-xl shadow mb-4"
                 >
-                  <div className="flex justify-between">
+                  <div className="flex justify-between px-1">
                     <p className="text-sm text-gray-500 capitalize">
                       {item.category}
                     </p>
-                    <span className="pr-5 text-xl">&#9825;</span>
+                    <span><WishlistButton product={item}/></span>
                   </div>
                   <img
                     src={item.thumbnail}
