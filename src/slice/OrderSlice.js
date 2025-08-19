@@ -15,7 +15,7 @@ const orderSlice = createSlice({
         status: "active", // default status
         orderedAt: new Date().toISOString(),
       };
-      state.orders.push(newOrder);
+      state.orders.unshift(newOrder);
     },
     cancelorder: (state, action) => {
       const orderId = action.payload;

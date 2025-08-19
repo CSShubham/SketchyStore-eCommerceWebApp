@@ -126,8 +126,9 @@ function OrdersPage() {
                       >
                         Cancel Order
                       </button>
-                      <button className="mt-4 sm:mt-0 border-blue-400 text-black hover:bg-blue-600 hover:text-white font-semibold border-2 px-4 py-2 rounded-md">
-                        View Order
+                      <button className="mt-4 sm:mt-0 border-blue-400 text-black hover:bg-blue-600 hover:text-white font-semibold border-2 px-4 py-2 rounded-md"
+                      onClick={() => navigate(`/home/${order.product.id}`)}>
+                        View Product
                       </button>
                     </div>
                   )}
