@@ -27,7 +27,11 @@ function Cart() {
           }}
         >
           {" "}
-          <ChevronLeft className="flex justify-center items-center" size={30} /> Continue Shopping{" "}
+          <ChevronLeft
+            className="flex justify-center items-center"
+            size={30}
+          />{" "}
+          Continue Shopping{" "}
         </button>
         <div className=" text-lg md:text-xl font-semibold md:font-bold">
           Total Cart Items : {cartQuantity}
@@ -52,12 +56,18 @@ function Cart() {
                 <li
                   key={item.id}
                   className="border p-2 px-3 rounded-xl shadow mb-4"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    navigate(`/home/${item.id}`);
+                  }}
                 >
                   <div className="flex justify-between px-1">
                     <p className="text-sm text-gray-500 capitalize">
                       {item.category}
                     </p>
-                    <span><WishlistButton product={item}/></span>
+                    <span>
+                      <WishlistButton product={item} />
+                    </span>
                   </div>
                   <img
                     src={item.thumbnail}
@@ -71,7 +81,8 @@ function Cart() {
                   <div className="flex gap-3 items-center mt-2 mb-2 mx-1">
                     <button
                       className="border-1 rounded-lg text-sm px-2 py-2.5 bg-red-500 text-white active:bg-white active:text-red-500 cursor-pointer"
-                      onClick={() => {
+                      onClick={(e) => {
+                        e.stopPropagation();
                         dispatch(removeFromCart(item.id));
                         toast.warn(`${item.title} removed from cart!!`);
                       }}
@@ -79,8 +90,8 @@ function Cart() {
                       Remove
                     </button>
                     <button
-                      onClick={() => {
-                        
+                      onClick={(e) => {
+                        e.stopPropagation();
                         navigate(`/checkout/${item.id}`);
                       }}
                       className="border-1 rounded-lg text-sm px-2 py-2.5 cursor-pointer"
