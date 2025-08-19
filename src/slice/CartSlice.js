@@ -15,7 +15,7 @@ const cartSlice=createSlice({
                 existingItem.totalPrice+=item.price;
             }else{
                 state.items.push({...item,quantity:1,totalPrice:item.price});
-                console.log("Item added to cart:", item);
+                
             }
             state.totalQuantity++;
             state.totalAmount+=item.price;
@@ -35,7 +35,7 @@ const cartSlice=createSlice({
                     state.items = state.items.filter((i)=>i.id!==id);
                 }
             }
-            console.log("Item removed from cart:", id);
+        
         },
         clearCart:(state)=>{
             state.items=[];
