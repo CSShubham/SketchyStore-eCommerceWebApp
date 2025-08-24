@@ -1,13 +1,29 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { Home, Store, Package, CircleUserRound } from "lucide-react";
+import { Home, Store, Package, CircleUserRound} from "lucide-react";
 function Footer() {
   return (
-    <footer className="sm:bg-gray-800 fixed  bg-white left-0 shadow-md bottom-0 sm:static sm:text-white text-center  py-0 sm:px-4 sm:py-4 text-sm sm:text-base w-full">
-      <div className=" flex-col hidden sm:flex sm:flex-row justify-center items-center gap-2">
-        <span>© 2025 My E-Commerce Store</span>
-        {/* You can add more links or info here for desktop */}
-      </div>
+    <footer className="sm:bg-gray-900 fixed  bg-white left-0 shadow-md bottom-0 sm:static sm:text-white text-center  py-0 sm:px-4 sm:py-4 text-sm sm:text-base w-full">
+      <div className=" flex-col hidden md:flex md:flex-row justify-center gap-10 items-center space-y-4 md:space-y-0">
+              <div className="text-gray-400 text-sm">
+                © 2025 My E-Commerce Store. All rights reserved.
+              </div>
+              <div className="flex space-x-6 text-sm">
+                <a
+                  href="#"
+                  className="text-gray-400 hover:text-[#FF735C] transition-colors duration-300"
+                >
+                  Privacy Policy
+                </a>
+                <a
+                  href="#"
+                  className="text-gray-400 hover:text-[#FF735C] transition-colors duration-300"
+                >
+                  Terms of Service
+                </a>
+              </div>
+            </div>
+      
       <div className="flex sm:hidden justify-around items-center ">
         <NavLink
           to="/"
