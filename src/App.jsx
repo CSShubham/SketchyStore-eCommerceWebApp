@@ -23,12 +23,12 @@ function App() {
       <Routes>
         <Route path="/" element={<MainLayout />}>
           <Route path="/" element={<Front />} />
-          <Route path="/home" element={<Home />} />
+          <Route path="/home" element={<Privateroutes><Home /></Privateroutes>} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/order-success" element={<OrderSuccess/>}/>
-          <Route path="/home/category/:category" element={<Product />} />
-          <Route path="/home/:productId" element={<ProductPage />} />
+          <Route path="/home/category/:category" element={<Privateroutes><Product /></Privateroutes>} />
+          <Route path="/home/:productId" element={<Privateroutes><ProductPage /></Privateroutes>} />
           <Route
             path="/cart"
             element={
