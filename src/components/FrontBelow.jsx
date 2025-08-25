@@ -1,5 +1,4 @@
-// "use client"
-// import { useState, useEffect } from "react"
+import React from "react";
 import {
   ArrowRight,
   Star,
@@ -18,90 +17,17 @@ import {
   Mail,
   Phone
 } from "lucide-react";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 function FrontBelow() {
-  const navigate =useNavigate();
+  const navigate = useNavigate();
   const handleCategoryClick = (category) => {
     navigate(`/home/category/${category}`);
   };
-  //   const [loading, setLoading] = useState(true)
 
-  //   useEffect(() => {
-  //     // Hide splash after 1.5 seconds
-  //     const timer = setTimeout(() => {
-  //       setLoading(false)
-  //       console.log("loading completed")
-  //     }, 200)
 
-  //     return () => clearTimeout(timer)
-  //   }, [])
-
-  //   if (loading) {
-  //     return (
-  //       <div className="min-h-screen w-full flex items-center justify-center bg-gradient-to-br from-orange-50 to-white">
-  //         <div className="text-center">
-  //           <div className="w-16 h-16 border-4 border-[#FF735C] border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
-  //           <p className="text-gray-600 text-lg">Loading your experience...</p>
-  //         </div>
-  //       </div>
-  //     )
-  //   }
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Hero Section */}
-      {/* <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-orange-50 via-white to-orange-100/30"> */}
-      {/* <div className="absolute inset-0 z-0">
-          <img
-            src="/modern-e-commerce-shopping-background-with-floatin.png"
-            alt="Shopping background"
-            className="w-full h-full object-cover opacity-20"
-          />
-          <div className="absolute inset-0 bg-gradient-to-br from-orange-50/80 via-white/90 to-orange-100/60"></div>
-        </div> */}
-
-      {/* <div className="absolute -left-32 top-1/2 -translate-y-1/2 w-64 h-64 md:w-96 md:h-96 lg:w-[500px] lg:h-[500px] bg-[#FF735C] rounded-full opacity-20 blur-3xl"></div>
-        <div className="absolute -right-32 bottom-0 w-48 h-48 md:w-72 md:h-72 bg-orange-200 rounded-full opacity-30 blur-2xl"></div>
-
-        <div className="container mx-auto px-4 py-12 lg:py-0 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-8 text-center lg:text-left">
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-gray-800 leading-tight">
-                Welcome to Our
-                <span className="text-[#FF735C] block">Store</span>
-              </h1> */}
-
-      {/* <div className="space-y-4">
-                <h2 className="text-xl md:text-2xl lg:text-3xl font-semibold text-gray-600">
-                  Your One-Stop Shop for Everything You Need!
-                </h2>
-                <p className="text-lg text-gray-600 max-w-md mx-auto lg:mx-0">
-                  Discover amazing products, unbeatable prices, and exceptional service that makes shopping a joy.
-                </p>
-              </div> */}
-
-      {/* <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                <button className="group bg-[#FF735C] text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-[#e55a42] transition-all duration-300 flex items-center justify-center gap-2">
-                  Shop Now
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </button>
-                <button className="border-2 border-[#FF735C] text-[#FF735C] px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-[#FF735C] hover:text-white transition-all duration-300">
-                  Learn More
-                </button>
-              </div>
-            </div> */}
-
-      {/* <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-[#FF735C]/20 to-orange-200/20 rounded-3xl blur-xl"></div>
-              <img
-                src="/modern-shopping-illustration-with-people-and-produ.png"
-                alt="Shopping experience"
-                className="relative w-full h-auto max-h-[600px] object-contain rounded-3xl shadow-2xl"
-              />
-            </div>
-          </div>
-        </div>
-      </section> */}
 
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
@@ -402,25 +328,6 @@ function FrontBelow() {
 
           {/* Bottom Bar */}
           <div className="border-t border-gray-800 pt-0">
-            {/* <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-              <div className="text-gray-400 text-sm">
-                © 2025 My E-Commerce Store. All rights reserved.
-              </div>
-              <div className="flex space-x-6 text-sm">
-                <a
-                  href="#"
-                  className="text-gray-400 hover:text-[#FF735C] transition-colors duration-300"
-                >
-                  Privacy Policy
-                </a>
-                <a
-                  href="#"
-                  className="text-gray-400 hover:text-[#FF735C] transition-colors duration-300"
-                >
-                  Terms of Service
-                </a>
-              </div>
-            </div>*/}
           </div> 
         </div>
       </footer>

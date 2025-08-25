@@ -1,10 +1,10 @@
-import React, { useEffect } from "react";
-import { useLocation, useNavigate, Outlet } from "react-router-dom";
+import React from "react";
+import { useNavigate, Outlet } from "react-router-dom";
 import Sidebar from "../components/AccountSidebar";
 import { ChevronLeft } from "lucide-react";
 
 function Account() {
-  const location = useLocation();
+  // const location = useLocation();
   const navigate = useNavigate();
   const isDesktop = window.matchMedia("(min-width: 768px)").matches;
 

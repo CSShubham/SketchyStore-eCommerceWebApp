@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { removeFromCart } from "../slice/CartSlice";
 import { useNavigate } from "react-router-dom";
@@ -6,6 +6,8 @@ import { toast } from "react-toastify";
 import { ShoppingCart } from "lucide-react";
 import { ChevronLeft } from "lucide-react";
 import WishlistButton from "../components/WishlistButton";
+import Lottie from "lottie-react";
+import emptyCartAnimation from "../assets/Empty Box.json";
 function Cart() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -39,11 +41,7 @@ function Cart() {
       </div>
       {cartItems.length === 0 ? (
         <div className="flex  flex-col justify-center items-center lg:h-150">
-          <img
-            src="/emptyCart.jpg"
-            alt="imageloading....."
-            className="h-50 w-50 md:h-80 md:w-80 lg:h-120 lg:w-120"
-          />
+          <Lottie animationData={emptyCartAnimation} loop={true} className="h-50 w-50 md:h-80 md:w-80 lg:h-110 lg:w-110" />
           <p className="text-xl md:text-3xl text-[#FF735C] tracking-wider font-semibold ">
             Your Cart is Empty
           </p>

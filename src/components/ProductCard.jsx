@@ -3,7 +3,6 @@ import { addToCart } from "../slice/CartSlice";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { toast } from "react-toastify";
-import { Heart } from "lucide-react";
 import WishlistButton from "./WishlistButton";
 function ProductCard({ product }) {
   const navigate = useNavigate();

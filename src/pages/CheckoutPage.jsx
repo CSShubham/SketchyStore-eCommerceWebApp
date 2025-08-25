@@ -3,7 +3,6 @@ import { useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { Plus, Minus, ShieldCheck, ChevronLeft } from "lucide-react";
-import ImageCarousel from "../components/ImageCarousel";
 import Loading from "../components/Loading";
 import { useAuth } from "../contexts/AuthContext";
 import { placeOrder } from "../slice/OrderSlice";

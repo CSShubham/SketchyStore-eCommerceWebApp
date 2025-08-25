@@ -1,7 +1,9 @@
 import React from 'react'
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { CheckCircle } from "lucide-react";
+
+import TickAnimation from "../assets/Successfully done.json"
+import Lottie from 'lottie-react';
 function OrderSuccess() {
  const navigate = useNavigate();
   const isMobile = window.matchMedia("(max-width: 767px)").matches;
@@ -17,9 +19,12 @@ function OrderSuccess() {
   return (
     <div className="flex items-center justify-center min-h-screen w-full bg-gradient-to-br from-green-100 to-blue-100 p-4">
       <div className="bg-white rounded-3xl shadow-2xl p-8 md:p-12 max-w-md w-full text-center animate-fadeSlideIn">
-        <div className="animate-bounceOnce">
-          <CheckCircle className="text-green-500 w-20 h-20 mx-auto mb-6" />
-        </div>
+
+        <Lottie
+          animationData={TickAnimation}
+          loop={false}
+          className="h-30 w-30 mx-auto"
+        />
         <h1 className="text-3xl font-bold text-gray-800 mb-2 animate-fadeIn delay-100">
           🎉 Order Confirmed!
         </h1>

@@ -1,8 +1,10 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { cancelorder } from "../slice/OrderSlice";
-import { ChevronLeft } from "lucide-react";
+import { ChevronLeft, ArrowRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import OrderAnimation from "../assets/No Item In Box.json";
+import Lottie from "lottie-react";
 function OrdersPage() {
   const orders = useSelector((state) => state.order.orders);
   const dispatch = useDispatch();
@@ -28,14 +30,23 @@ function OrdersPage() {
       </div>
       {orders.length === 0 ? (
         <div className="flex  flex-col justify-center items-center xl:h-120">
-          <img
+          {/* <img
             src="/emptywishlist.PNG"
             alt="imageloading....."
             className="h-50 w-50 md:h-80 md:w-80 lg:h-120 lg:w-120"
+          /> */}
+          <Lottie
+            animationData={OrderAnimation}
+            loop={true}
+            className="h-50 w-50 md:h-80 md:w-80 lg:h-120 lg:w-120"
           />
-          <p className="text-lg md:text-xl lg:text-3xl text-[#FF735C] tracking-wider font-semibold ">
-            Empty
-          </p>
+          <button
+            onClick={() => navigate("/home")}
+            className="bg-white text-[#FF735C] px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-[#FF735C] hover:text-white border-2 transition-colors duration-300 inline-flex items-center gap-2"
+          >
+            Start Shopping Now
+            <ArrowRight className="w-5 h-5" />
+          </button>
         </div>
       ) : (
         <>
@@ -126,8 +137,10 @@ function OrdersPage() {
                       >
                         Cancel Order
                       </button>
-                      <button className="mt-4 sm:mt-0 border-blue-400 text-black hover:bg-blue-600 hover:text-white font-semibold border-2 px-4 py-2 rounded-md"
-                      onClick={() => navigate(`/home/${order.product.id}`)}>
+                      <button
+                        className="mt-4 sm:mt-0 border-blue-400 text-black hover:bg-blue-600 hover:text-white font-semibold border-2 px-4 py-2 rounded-md"
+                        onClick={() => navigate(`/home/${order.product.id}`)}
+                      >
                         View Product
                       </button>
                     </div>
